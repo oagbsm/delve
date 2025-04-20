@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Services Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TQFEm6rs3WdN3a6rO7Pu6xxV8KHfnEABcEef+TJeO9cO8rG9ApC/zNAGT8YK6xyxu/NHY3klEm4BzIZS3WqhXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #000000, #1a002a);
+      color: #ffffff;
+      padding-top: 100px;
+
+    }
+    .menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #1a002a;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  z-index: 998;
+}
+
+.mobile-nav a {
+  color: #ccc;
+  padding: 12px 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mobile-nav a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header {
+    padding: 20px;
+  }
+}
+
+    header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: linear-gradient(to right, #000000, #1a002a);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: #ccc;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .btn-contact {
+      background: #ffffff;
+      color: #1a002a;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .main-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px;
+      flex-wrap: wrap;
+    }
+
+    .text-content {
+      max-width: 600px;
+    }
+
+    .text-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .text-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .btn-discover {
+      background: #4ade80;
+      color: #000;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    .image-section {
+      max-width: 500px;
+      margin-top: 30px;
+    }
+
+    .image-section img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+ 
+
+    .logos {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      opacity: 0.7;
+    }
+
+    .logos img {
+      max-height: 40px;
+    }
+
+    /* === Services Section === */
+    .services-section {
+      background-color: #f7faff;
+      padding: 80px 60px;
+      color: #1a1a1a;
+    }
+
+    .services-section h2 {
+      font-size: 36px;
+      margin-bottom: 50px;
+      text-align: center;
+      color: #1a002a;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-card .icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .service-card p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .btn-read {
+      display: inline-block;
+      background-color: #4ade80;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-read:hover {
+      background-color: #16a34a;
+    }
+    #review {
+    background: #fff;
+    color: #000;
+    padding: 80px 30px;
+  }
+
+  #review .container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+
+  #review h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 60px;
+  }
+
+  #review h2 span {
+    background: linear-gradient(to right, #7f00ff, #e100ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #testimonial-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+  }
+
+  .testimonial-card {
+    flex: 0 0 300px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .quote {
+    font-size: 40px;
+    color: #7f00ff;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .testimonial-card .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    #review h2 {
+      font-size: 28px;
+    }
+
+    .testimonial-card {
+      flex: 0 0 80%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #review {
+      padding: 60px 20px;
+    }
+
+    #review h2 {
+      font-size: 24px;
+    }
+
+    .testimonial-card {
+      flex: 0 0 90%;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Delve Technologies</div>
+    <nav class="desktop-nav">
+      <a href="#services">Services</a>
+      <a href="#Certs">Certifications</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#review">Reviews</a>
+    <a href="contact.html" class="btn-contact">Contact</a>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+  
+  <!-- Mobile menu -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#services">Services</a>
+    <a href="#Certs">Certifications</a>
+    <a href="#why">Why Choose Us</a>
+    <a href="#review">Reviews</a>
+    <a href="contact.html" class="btn-contact">Contact</a>
+  </nav>
+
+  <section class="main-section">
+    <div class="text-content">
+      <h1>Cloud. Cybersecurity. Code.<br>Your Digital Evolution Starts Here.</h1>
+      <p>We specialize in <span class="highlight">cloud migration, network security, and modern software solutions</span> that help businesses grow securely and scale confidently in a connected world.</p>
+      <button class="btn-discover" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })">Discover Our Services</button>
+    </div>
+    <div class="image-section">
+      <img src="main_image.png" alt="Team Working">
+    </div>
+  </section>
+
+  <section id="services" class="services-section" style="background-color: white; color: #1a002a; padding: 60px 20px;">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">Our Comprehensive Solutions, Designed with Your Needs in Mind</h2>
+  
+    <div class="service-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: auto;">
+  
+      <div class="service-card" style="background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.05);">
+        <div style="margin-bottom: 20px;">
+          <svg height="40" viewBox="0 0 24 24" fill="#7c3aed"><path d="M4 4h16v2H4zM4 11h16v2H4zM4 18h16v2H4z"/></svg>
+        </div>
+        <h3>Custom Software Development Services</h3>
+        <p>We build software solutions, making the specific needs of your business a top priority. Our experienced developers utilize the latest technologies to provide efficient, scalable, and secure applications.</p>
+      </div>
+  
+      <div class="service-card" style="background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.05);">
+        <div style="margin-bottom: 20px;">
+          <svg height="40" viewBox="0 0 24 24" fill="#0ea5e9"><path d="M4 6h16v2H4zM4 11h16v2H4zM4 16h10v2H4z"/></svg>
+        </div>
+        <h3>Cloud Services</h3>
+        <p>Cloud Software Services are an integral part of our IT services offering. We help businesses on their cloud journey, providing solutions that improve data security, operational efficiency, and scalability.</p>
+      </div>
+  
+      <div class="service-card" style="background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.05);">
+        <div style="margin-bottom: 20px;">
+          <svg height="40" viewBox="0 0 24 24" fill="#9333ea"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>
+        </div>
+        <h3>IT Consulting Services</h3>
+        <p>Navigate the complex IT landscape with our Consulting Services. We align technology strategies with your business objectives, providing insights that drive growth and improve performance.</p>
+      </div>
+  
+      <div class="service-card" style="background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.05);">
+        <div style="margin-bottom: 20px;">
+          <svg height="40" viewBox="0 0 24 24" fill="#f59e0b"><path d="M3 4h18v2H3zM3 9h18v2H3zM3 14h18v2H3zM3 19h10v2H3z"/></svg>
+        </div>
+        <h3>Data Management Services</h3>
+        <p>Our Data Management Services ensure your data is clean, dependable, and readily available. With data integration, quality management, analytics, and more, we turn your data into a valuable business asset.</p>
+      </div>
+  
+      <!-- Replaced Embedded Systems with Mobile Development -->
+      <div class="service-card" style="background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.05);">
+        <div style="margin-bottom: 20px;">
+          <svg height="40" viewBox="0 0 24 24" fill="#10b981"><path d="M7 2C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2H7zm0 2h10v16H7V4zm5 17c.83 0 1.5-.67 1.5-1.5S12.83 18 12 18s-1.5.67-1.5 1.5S11.17 21 12 21z"/></svg>
+        </div>
+        <h3>Mobile Development Services</h3>
+        <p>We craft intuitive, high-performance mobile apps tailored for both iOS and Android. From design to deployment, we ensure your app delivers a seamless user experience.</p>
+      </div>
+  
+      <!-- Replaced Staffing/Outsourcing with Web Development -->
+      <div class="service-card" style="background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.05);">
+        <div style="margin-bottom: 20px;">
+          <svg height="40" viewBox="0 0 24 24" fill="#6366f1"><path d="M3 4v16h18V4H3zm16 14H5V6h14v12zm-4-6H8v-2h7v2z"/></svg>
+        </div>
+        <h3>Web Development Services</h3>
+        <p>We design and develop stunning, responsive websites using the latest web technologies. Whether it’s a simple landing page or a full-scale web app, we've got you covered.</p>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  
+<!-- Add this section below your services section in the main HTML file -->
+
+<section id="Certs" style="background: linear-gradient(to bottom right, #000000, #32054b);  padding: 80px 30px;">
+  <div class="container" style="max-width: 1200px; margin: auto; text-align: center;">
+    <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 50px;">  Certifications</h2>
+
+    <div class="top-logos" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-bottom: 50px;">
+      <img src="https://img.icons8.com/color/480/microsoft.png" alt="Microsoft Partner" style="height: 100px; ">
+      <img src="https://img.icons8.com/color/480/google-logo.png" alt="TUV Nord" style="height: 100px; filter: brightness(0) invert(1);">
+    </div>
+
+    <div class="text" style="max-width: 800px; margin: 0 auto 60px; font-size: 16px; line-height: 1.7;">
+      <p><strong>At Delve Technologies, exceeding client expectations</strong> has been a fundamental part of our journey in software development and IT talent services. With 10+ years of experience and hundreds of successful collaborations, we’ve built a solid reputation for reliability, guided by a commitment to integrity. <strong>We prioritize meaningful features over bloated add-ons</strong>—an approach that earns trust and delivers lasting value.</p>
+
+      <p>Our commitment to <strong>industry-leading standards and best practices</strong> is reflected in prestigious certifications like the <strong>Microsoft Gold Partnership</strong> and <strong>ISO 27001</strong>. We've also been honored with recognition such as the Forbes Diamond Award for exceptional growth and customer success. Our client testimonials on platforms like Clutch further showcase our dedication to quality and results.</p>
+
+      <p><strong>If you're looking for a dependable, high-integrity software partner—Delve Technologies is your answer.</strong></p>
+    </div>
+
+
+    <div class="logos">
+      <img class="logo" src="https://img.icons8.com/color/480/azure-1.png" alt="Azure">
+      <img class="logo" src="https://img.icons8.com/color/480/amazon-web-services.png" alt="AWS">
+      <img class="logo" src="https://img.icons8.com/color/480/microsoft.png" alt="Microsoft">
+      <img class="logo" src="https://img.icons8.com/color/480/google-logo.png" alt="Google">
+      <img class="logo" src="https://img.icons8.com/color/480/prize.png" alt="Clutch 1000">
+    </div>
+  </div>
+</section>
+<section id="why" style="background: #0d1021; color: #fff; padding: 80px 60px;">
+  <h2 style="text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 60px;">Why Choose Us</h2>
+
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  ">
+    <div style="background-color: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+      <i class="fas fa-user-shield" style="font-size: 28px; color: #4ade80;"></i>
+      <h3 style="margin-top: 15px; font-size: 20px; font-weight: 700;">Trusted Expertise</h3>
+      <p style="color: #ccc; line-height: 1.6;">Certified IT professionals delivering secure, scalable solutions tailored to your needs.</p>
+    </div>
+
+    <div style="background-color: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+      <i class="fas fa-bolt" style="font-size: 28px; color: #4ade80;"></i>
+      <h3 style="margin-top: 15px; font-size: 20px; font-weight: 700;">Fast & Reliable</h3>
+      <p style="color: #ccc; line-height: 1.6;">Quick turnaround, proactive support, and 99.9% uptime — so your business never stops.</p>
+    </div>
+
+    <div style="background-color: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+      <i class="fas fa-handshake" style="font-size: 28px; color: #4ade80;"></i>
+      <h3 style="margin-top: 15px; font-size: 20px; font-weight: 700;">Client-Focused</h3>
+      <p style="color: #ccc; line-height: 1.6;">We build lasting relationships with clear communication and no hidden fees.</p>
+    </div>
+
+    <div style="background-color: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+      <i class="fas fa-lock" style="font-size: 28px; color: #4ade80;"></i>
+      <h3 style="margin-top: 15px; font-size: 20px; font-weight: 700;">Security First</h3>
+      <p style="color: #ccc; line-height: 1.6;">We implement industry-standard security practices to protect your data and systems.</p>
+    </div>
+
+    <div style="background-color: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+      <i class="fas fa-code" style="font-size: 28px; color: #4ade80;"></i>
+      <h3 style="margin-top: 15px; font-size: 20px; font-weight: 700;">Cutting-Edge Tech</h3>
+      <p style="color: #ccc; line-height: 1.6;">We use modern frameworks and infrastructure to future-proof your digital solutions.</p>
+    </div>
+
+    <div style="background-color: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+      <i class="fas fa-chart-line" style="font-size: 28px; color: #4ade80;"></i>
+      <h3 style="margin-top: 15px; font-size: 20px; font-weight: 700;">Results-Driven</h3>
+      <p style="color: #ccc; line-height: 1.6;">We focus on business outcomes, delivering measurable growth and ROI for your company.</p>
+    </div>
+  </div>
+</section>
+
+  <section id ="review" style="background: #fff; color: #000; padding: 80px 30px;">
+  <div style="max-width: 1200px; margin: auto; text-align: center;">
+    <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 60px;">
+      See What Our <span style="background: linear-gradient(to right, #7f00ff, #e100ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Clients Say</span>
+    </h2>
+
+    <div style="position: relative;">
+      <div id="testimonial-track" style="display: flex; gap: 20px; overflow-x: scroll; scroll-behavior: smooth; padding-bottom: 20px; ">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div class="quote">“</div>
+          <h3>Abdifatah Abdi</h3>
+          <p class="subtitle">Mubarak Marketplace</p>
+          <p>Delve Technologies helped us launch a secure and scalable Cross Platform application on time and within budget. Couldn’t ask for more.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div class="quote">“</div>
+          <h3>Michael Lee</h3>
+          <p class="subtitle">Surveyio</p>
+          <p>Their team quickly grasped our business needs and delivered a clean, efficient backend system that scaled beautifully.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div class="quote">“</div>
+          <h3>Amina Patel</h3>
+          <p class="subtitle">Buro Healthcare</p>
+          <p>Delve Technologies brought in tech experts that integrated seamlessly with our team. They were proactive, reliable, and results-driven.</p>
+        </div>
+        <!-- Add more as needed -->
+      </div>
+
+      <!-- Arrows -->
+
+    </div>
+  </div>
+</section>
+<footer style="background: linear-gradient(to right, #0f0f0f, #1a002a); color: white; padding: 60px 20px;">
+  <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+
+    <!-- Logo and About -->
+    <div>
+      <img src="delve.png" alt="Delve Logo" style="width: 120px; margin-bottom: 20px;">
+      <p style="line-height: 1.6;">
+        At Delve Technologies, we bridge innovation with purpose — delivering cutting-edge digital solutions with a focus on healthcare, security, and enterprise sectors across East Africa and beyond.
+      </p>
+    </div>
+
+    <!-- Products -->
+
+
+    <!-- Resources -->
+    <div>
+      <h4 style="margin-bottom: 16px;">Resources</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li>About Us</li>
+        <li>Testimonials</li>
+        <li>Blog</li>
+        <li>FAQs</li>
+        <li>Case Studies</li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 style="margin-bottom: 16px;">Get in Touch</h4>
+      <p>Email: info@delvetech.so</p>
+      <p>Phone: +252 61 234 5678</p>
+      <p>Locations:</p>
+      <ul style="list-style: none; padding: 0;">
+        <li>Minnesota, USA</li>
+        <li>Mogadishu, Somalia</li>
+        <li>Nairobi, Kenya</li>
+      </ul>
+      <!-- <div style="margin-top: 16px;">
+        <a href="#" style="margin-right: 10px; color: white;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="margin-right: 10px; color: white;"><i class="fab fa-github"></i></a>
+        <a href="#" style="margin-right: 10px; color: white;"><i class="fab fa-linkedin"></i></a>
+        <a href="#" style="margin-right: 10px; color: white;"><i class="fab fa-behance"></i></a>
+      </div>
+    </div> -->
+
+  </div>
+
+  <!-- Bottom Row -->
+  <div style="margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; text-align: center; font-size: 14px; color: #ccc;">
+    <div style="margin-bottom: 10px;">© 2025 Delve Technologies. All Rights Reserved.</div>
+    <div>
+      <a href="#" style="color: #ccc; margin-right: 15px;">Privacy Policy</a>
+      <a href="#" style="color: #ccc;">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+
+    
+
+
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  menuToggle.addEventListener('click', () => {
+    mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  // Optional: close menu when a link is clicked
+  const links = mobileNav.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.style.display = 'none';
+    });
+  });
+</script>
+
+
+
+
+</body>
+</html>

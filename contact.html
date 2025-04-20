@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Delve Technologies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #1a002a;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  z-index: 998;
+}
+
+.mobile-nav a {
+  color: #ccc;
+  padding: 12px 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mobile-nav a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header {
+    padding: 20px;
+  }
+}
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #000000, #1a002a);
+      color: #ffffff;
+      padding-top: 100px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: linear-gradient(to right, #000000, #1a002a);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 10px;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .btn-contact {
+      background: #ffffff;
+      color: #1a002a;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    p.subtitle {
+      color: #bbb;
+      margin-bottom: 60px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: #1c1c1c;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .card i {
+      font-size: 24px;
+      color: #d946ef;
+    }
+
+    .card h4 {
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .card p {
+      color: #ccc;
+    }
+
+    form {
+      background: #1c1c1c;
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: none;
+      background: #2e2e2e;
+      color: #fff;
+    }
+
+    form button {
+      padding: 12px 30px;
+      background: #d946ef;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .whatsapp-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #25D366;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .whatsapp-link i {
+      margin-right: 8px;
+    }
+
+    footer {
+      background: linear-gradient(to right, #0f0f0f, #1a002a);
+      color: white;
+      padding: 60px 20px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer h4 {
+      margin-bottom: 16px;
+    }
+
+    footer .bottom-row {
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    /* Responsive Styles */
+    @media(max-width: 992px) {
+      header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .container {
+        padding: 40px 20px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      form {
+        padding: 30px 20px;
+      }
+
+      footer > div {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+      }
+
+      footer .bottom-row {
+        font-size: 13px;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      .btn-contact {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Delve Technologies</div>
+    <nav>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#Certs">Certifications</a>
+      <a href="index.html#why">Why Choose Us</a>
+      <a href="index.html#review">Reviews</a>
+      <a href="contact.html" class="btn-contact">Contact</a>
+    </nav>
+  </header>
+  <!-- Mobile menu -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#services">Services</a>
+    <a href="#Certs">Certifications</a>
+    <a href="#why">Why Choose Us</a>
+    <a href="#review">Reviews</a>
+    <a href="contact.html" class="btn-contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Contact our help desk for assistance</h2>
+    <p class="subtitle">We are more than happy to welcome you to our company. Kindly contact us in whichever form you prefer 😊</p>
+
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h4>Our Address</h4>
+        <p>Addeir Tower A, Apt 103, Maka Almukarama Ave, 2525 Mogadishu, Somalia.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-envelope"></i>
+        <h4>Email Us</h4>
+        <p>info@jtech.so<br>support@jtech.so</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-phone-alt"></i>
+        <h4>Call Us</h4>
+        <p>+252 615 988899<br>+252 616 102387</p>
+      </div>
+    </div>
+
+    <h3>Let us know how we can assist you</h3>
+    <form action="send_email.php" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Message" rows="6" required></textarea>
+      <button type="submit">Contact Now</button>
+    </form>
+
+    <a class="whatsapp-link" href="https://wa.me/22526106470456" target="_blank">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+      <div>
+        <img src="delve.png" alt="Delve Logo" style="width: 120px; margin-bottom: 20px;">
+        <p style="line-height: 1.6;">
+          At Delve Technologies, we bridge innovation with purpose — delivering cutting-edge digital solutions with a focus on healthcare, security, and enterprise sectors across East Africa and beyond.
+        </p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Testimonials</li>
+          <li>Blog</li>
+          <li>FAQs</li>
+          <li>Case Studies</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <p>Email: info@delvetech.so</p>
+        <p>Phone: +252 61 234 5678</p>
+        <p>Locations:</p>
+        <ul>
+          <li>USA</li>
+          <li>Somalia</li>
+          <li>Kenya</li>
+        </ul>
+        <!-- <div style="margin-top: 16px;">
+          <a href="#" style="margin-right: 10px;"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" style="margin-right: 10px;"><i class="fab fa-github"></i></a>
+          <a href="#" style="margin-right: 10px;"><i class="fab fa-linkedin"></i></a>
+          <a href="#" style="margin-right: 10px;"><i class="fab fa-behance"></i></a>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div style="margin-bottom: 10px;">© 2025 Delve Technologies. All Rights Reserved.</div>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#" style="margin-left: 15px;">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+  
+    menuToggle.addEventListener('click', () => {
+      mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+    });
+  
+    // Optional: close menu when a link is clicked
+    const links = mobileNav.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
